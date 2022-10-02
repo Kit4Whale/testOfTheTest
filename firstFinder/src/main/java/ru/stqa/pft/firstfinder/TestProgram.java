@@ -19,9 +19,11 @@ public class TestProgram {
               System.out.println("Hello " + somebody + "!");
        }
        public static String getName () {
-              System.out.print("Введите Ваше имя: ");
-              Scanner input = new Scanner(System.in);
-              String name = input.next();
+//              System.out.print("Введите Ваше имя: ");
+//              Scanner input = new Scanner(System.in);
+//              String name = input.next();
+
+              String name = "Nick";
 
               return name;
        }

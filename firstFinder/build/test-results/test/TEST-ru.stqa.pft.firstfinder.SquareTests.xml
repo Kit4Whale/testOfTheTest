@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.firstfinder.SquareTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-10-02T17:05:10" hostname="MacBook-Pro.local" time="0.005">
+  <properties/>
+  <testcase name="testArea" classname="ru.stqa.pft.firstfinder.SquareTests" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
