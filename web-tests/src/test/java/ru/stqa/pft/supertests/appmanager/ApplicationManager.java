@@ -7,7 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import ru.stqa.pft.supertests.model.GroupData;
 
 public class ApplicationManager {
+
     public WebDriver driver;
+    private  GroupHelper groupHelper;
+    private SessionHelper sessionHelper;
 
     public static boolean isAlertPresent (WebDriver driver) {
         try {
@@ -22,27 +25,17 @@ public class ApplicationManager {
         System.setProperty("webdriver.chrome.driver", "/Users/nikitastrahov/Documents/GitHub/testOfTheTest/web-tests/src/test/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("https://stepik.org/catalog");
+        groupHelper = new GroupHelper(driver);
+        sessionHelper = new SessionHelper(driver);
         Thread.sleep(3000);
-        login(new GroupData("nikitastrakhov1@gmail.com", "cjhjrfctvbvbkkbvtnhjdsq"));
-    }
-
-    private void login(GroupData groupData) throws InterruptedException {
-      driver.findElement(By.id("ember234")).click();
-      driver.findElement(By.id("id_login_email")).sendKeys(groupData.getUsername());
-      driver.findElement(By.id("id_login_password")).sendKeys(groupData.getPassword());
-      driver.findElement(By.xpath("//form[@id = 'login_form']/button")).click();
-      Thread.sleep(2000);
-    }
-
-    public void myEducationPage() {
-        driver.findElement(By.id("ember13")).click();
+        sessionHelper.login(new GroupData("nikitastrakhov1@gmail.com", "cjhjrfctvbvbkkbvtnhjdsq"));
     }
 
     public void stop() {
         driver.quit();
     }
 
-    public void getTeachPage() {
-        driver.findElement(By.linkText("Преподавание")).click();
+    public GroupHelper getGroupHelper() {
+        return groupHelper;
     }
 }

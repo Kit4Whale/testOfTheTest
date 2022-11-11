@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 public class CreateTest extends TestBase {
 
-  @Test
-  public void testAuthorization() {
-      app.myEducationPage();
-      
-  }
+    @Test
+    public void testAuthorization() {
+        app.getGroupHelper().myEducationPage();
+
+    }
 
 }
