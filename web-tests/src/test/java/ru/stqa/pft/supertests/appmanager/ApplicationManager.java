@@ -22,13 +22,13 @@ public class ApplicationManager {
   }
 
     public void init() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/Users/nikitastrahov/Documents/GitHub/testOfTheTest/web-tests/src/test/resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", {{path}});
         driver = new ChromeDriver();
         driver.get("https://stepik.org/catalog");
         groupHelper = new GroupHelper(driver);
         sessionHelper = new SessionHelper(driver);
         Thread.sleep(3000);
-        sessionHelper.login(new GroupData("nikitastrakhov1@gmail.com", "cjhjrfctvbvbkkbvtnhjdsq"));
+        sessionHelper.login(new GroupData({{email}}, {{pass}}));
     }
 
     public void stop() {
